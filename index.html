@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 让日常更有玩味</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #fafaf9;
+            color: #1c1c1c;
+            line-height: 1.65;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* hero */
+        .hero {
+            padding: 3.2rem 0 2.8rem 0;
+            border-bottom: 1px solid #e6e4e1;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1f1e1b;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #5f5d59;
+            max-width: 32rem;
+            line-height: 1.7;
+        }
+
+        .hero .sub a {
+            color: #1f1e1b;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 1px;
+            font-weight: 450;
+        }
+
+        .hero .sub a:hover {
+            color: #b75f3a;
+        }
+
+        /* 通用 section */
+        section {
+            padding: 2.6rem 0;
+            border-bottom: 1px solid #eeecea;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 470;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.2rem;
+            color: #1f1e1b;
+        }
+
+        p, li {
+            color: #3f3d39;
+            margin-bottom: 0.9rem;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 1.4rem;
+            margin-bottom: 0.7rem;
+        }
+
+        ul li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            font-weight: 600;
+            color: #b75f3a;
+        }
+
+        .highlight {
+            background-color: #f3f0eb;
+            padding: 0.05rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 400;
+        }
+
+        /* 卡片区域 — 优势区 */
+        .advantage-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 0.4rem;
+        }
+
+        .advantage-card {
+            flex: 1 1 170px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.2rem 1.1rem 1.1rem 1.1rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03);
+            border: 1px solid #eae7e2;
+            transition: box-shadow 0.2s;
+        }
+
+        .advantage-card:hover {
+            box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+        }
+
+        .advantage-card .emoji {
+            font-size: 1.7rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .advantage-card h3 {
+            font-weight: 470;
+            font-size: 1.05rem;
+            margin-bottom: 0.2rem;
+            color: #1f1e1b;
+        }
+
+        .advantage-card p {
+            font-size: 0.9rem;
+            color: #5a5854;
+            margin-bottom: 0;
+        }
+
+        /* FAQ 摘要 */
+        .faq-item {
+            padding: 1rem 0 0.6rem 0;
+            border-bottom: 1px dashed #e0ddda;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            font-weight: 480;
+            display: block;
+            margin-bottom: 0.25rem;
+            color: #2c2a27;
+        }
+
+        .faq-item p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        /* 底部 */
+        .footer-note {
+            padding: 2rem 0 1rem 0;
+            font-size: 0.85rem;
+            color: #8b8984;
+            border-top: 1px solid #e6e4e1;
+            margin-top: 0.6rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.6rem;
+        }
+
+        .footer-note a {
+            color: #5f5d59;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 0.8px;
+        }
+
+        .footer-note a:hover {
+            color: #b75f3a;
+        }
+
+        /* 响应式 */
+        @media (max-width: 500px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .advantage-card {
+                flex: 1 1 100%;
+            }
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #efedea;
+            margin: 0.6rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero 区 -->
+    <div class="hero">
+        <h1>爱游戏，不止于消遣</h1>
+        <p class="sub">
+            游戏是日常里的一小片自留地。无论你钟情策略、叙事还是指尖放松，<a href="https://cnofficial-i-game.com.cn">爱游戏</a>都愿意陪你找到那份刚刚好的愉悦感。
+        </p>
+    </div>
+
+    <!-- 优势区 -->
+    <section>
+        <h2>一些实在的好处</h2>
+        <div class="advantage-grid">
+            <div class="advantage-card">
+                <span class="emoji">🕹️</span>
+                <h3>轻量选择</h3>
+                <p>不需要高配设备，多数游戏打开即玩，等车、午休时都能随时开始。</p>
+            </div>
+            <div class="advantage-card">
+                <span class="emoji">🧩</span>
+                <h3>品类丰富</h3>
+                <p>从解谜、模拟到协作闯关，总有一类能对上你的电波。</p>
+            </div>
+            <div class="advantage-card">
+                <span class="emoji">🤝</span>
+                <h3>同好氛围</h3>
+                <p>社区讨论克制友善，分享心得、找搭子，不必担心过度竞争或戾气。</p>
+            </div>
+        </div>
+        <p style="margin-top: 1.2rem; font-size: 0.95rem; color: #5f5d59;">
+            游戏不该成为负担，而是一种可随时抽身、又总能回味的陪伴。
+        </p>
+    </section>
+
+    <!-- 说明区 —— 场景化切入 -->
+    <section>
+        <h2>当游戏走进日常</h2>
+        <p>
+            有人习惯睡前花十五分钟整理小岛，有人在通勤路上推一局战棋，也有人周末约上朋友连线建造。不是每个玩家都想成为高手，更多人只是想在生活缝隙里，找到一个能沉浸片刻的角落。
+        </p>
+        <p>
+            <a href="https://cnofficial-i-game.com.cn">爱游戏</a>也关注这种更温和的参与方式——不强调排名与时长，而是把注意力放在「玩」本身的舒适度上。那些设计精巧的独立作品、操作门槛不高的联机小游戏，往往比大型网游更适合日常节奏。
+        </p>
+        <p>
+            当然，如果你乐意探索，里面也藏着一些需要动动脑筋的宝藏。保持好奇就好。
+        </p>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section>
+        <h2>几个常被问到的</h2>
+        <div class="faq-item">
+            <strong>游戏需要付费吗？</strong>
+            <p>平台上大部分内容免费或提供试玩，部分完整版或扩展内容会单独标注，你可以根据兴趣自由决定。</p>
+        </div>
+        <div class="faq-item">
+            <strong>一个人玩会不会无聊？</strong>
+            <p>不少游戏支持单人沉浸模式，同时也有异步互动或轻联机设计——即使不实时组队，也能感受到其他玩家的痕迹。</p>
+        </div>
+        <div class="faq-item">
+            <strong>如何找到适合自己的游戏？</strong>
+            <p>不妨从分类标签和玩家短评入手，按风格、时长、难度筛选，比漫无目的地翻更高效。也可以留意每周精选推荐。</p>
+        </div>
+    </section>
+
+    <!-- 底部链接 -->
+    <div class="footer-note">
+        <span>爱游戏 · 自在玩味</span>
+        <span><a href="https://cnofficial-i-game.com.cn">爱游戏</a> ｜ 内容持续更新</span>
+    </div>
+
+</div>
+</body>
+</html>

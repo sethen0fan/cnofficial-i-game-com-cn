@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sethen0fan.github.io/cnofficial-i-game-com-cn/sitemap.xml
