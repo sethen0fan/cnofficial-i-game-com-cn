@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>德州扑克游戏 · 知识库索引站</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f7fb;
+      color: #1e1f28;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(145deg, #10131c 0%, #1f2330 100%);
+      padding: 4rem 2rem 3.5rem;
+      text-align: center;
+      color: #eaeef5;
+      border-bottom: 1px solid #2c3142;
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 1.2rem;
+      font-size: 1.1rem;
+      color: #b9c1d4;
+    }
+    .hero .sub-line {
+      display: inline-block;
+      background: rgba(72, 118, 255, 0.18);
+      padding: 0.3rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      color: #b0c4ff;
+      border: 1px solid rgba(72, 118, 255, 0.3);
+    }
+    /* 主内容区：浅色正文 */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3.5rem;
+      flex: 1;
+    }
+    /* 卡片式目录感布局 */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin-bottom: 2.5rem;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.8rem 1.5rem 2rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.04);
+      transition: transform 0.1s ease;
+      border: 1px solid #eef0f5;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #3e4253;
+      margin-bottom: 0.5rem;
+    }
+    .card ul {
+      padding-left: 1.2rem;
+      color: #3f465b;
+      font-size: 0.95rem;
+      margin-top: 0.3rem;
+    }
+    .card ul li {
+      margin-bottom: 0.25rem;
+    }
+    .badge {
+      background: #eef2f9;
+      color: #2f3b5e;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 0.7rem;
+    }
+    /* 强调色用于链接 */
+    a {
+      color: #3b6eff;
+      text-decoration: none;
+      border-bottom: 1px dotted #b8caff;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    a:hover {
+      color: #1a3da6;
+      border-bottom-color: #1a3da6;
+    }
+    .info-box {
+      background: #f0f3fc;
+      border-left: 4px solid #3b6eff;
+      padding: 1.2rem 1.5rem;
+      border-radius: 12px;
+      margin: 2rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+    .info-box strong {
+      color: #121826;
+    }
+    .notice-area {
+      background: #faf9f4;
+      border: 1px solid #e4e6ed;
+      border-radius: 18px;
+      padding: 1.5rem 1.8rem;
+      margin: 1.8rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.6rem 0.8rem;
+    }
+    .notice-area .label {
+      font-weight: 600;
+      color: #252a3a;
+      font-size: 0.85rem;
+      background: #dde2ed;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+    }
+    .faq-mini {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 2rem 0 0.8rem;
+    }
+    .faq-item {
+      background: white;
+      padding: 1rem 1.2rem;
+      border-radius: 16px;
+      border: 1px solid #e7eaf1;
+    }
+    .faq-item q {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #1e2335;
+    }
+    .faq-item .answer {
+      font-size: 0.92rem;
+      color: #49506a;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #dfe3ed;
+      margin: 2rem 0 1rem;
+    }
+    .footnote {
+      font-size: 0.85rem;
+      color: #6b7187;
+      text-align: center;
+      padding: 1.5rem 0 0.2rem;
+    }
+    /* 响应式 */
+    @media (max-width: 680px) {
+      .hero h1 { font-size: 2rem; }
+      .grid-cards { grid-template-columns: 1fr; gap: 1.2rem; }
+      .faq-mini { grid-template-columns: 1fr; }
+      .notice-area { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>德州扑克 · 策略与规则库</h1>
+    <p>面向牌手与爱好者的知识索引站 —— 快速定位术语、场景、判断与常见疑惑。</p>
+    <span class="sub-line">📚 入门 · 进阶 · 查询</span>
+  </header>
+
+  <main class="container">
+    <!-- 目录感卡片区：特点/说明/场景/提示 -->
+    <div class="grid-cards">
+      <div class="card">
+        <span class="badge">📌 说明区</span>
+        <h3>🧩 站点定位</h3>
+        <p>这个网站围绕 <a href="https://site-dezhou.com">德州扑克游戏</a> 整理知识条目，不提供真实货币对局，也不推介任何平台。内容涵盖手牌强度、位置概念、底池赔率、常见变体以及策略框架。</p>
+      </div>
+      <div class="card">
+        <span class="badge">⚡ 特点区</span>
+        <h3>🔍 结构化检索</h3>
+        <p>每个概念以独立卡片或短篇方式呈现，方便对照查阅。从翻前范围到河牌价值下注，避免碎片化阅读，优先引用通用理论。</p>
+        <ul>
+          <li>手牌分类与起手表</li>
+          <li>位置与下注尺度</li>
+          <li>底池赔率速查</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="badge">🃏 场景区</span>
+        <h3>🎯 常见对局场景</h3>
+        <p>翻牌圈持续下注、转牌半诈唬、河牌抓诈唬…… 这些典型局面均有单独笔记。无论你玩常规桌还是锦标赛，都能找到对应思考链路。</p>
+      </div>
+      <div class="card">
+        <span class="badge">💡 提示区</span>
+        <h3>📖 阅读建议</h3>
+        <p>如果你是刚接触 <a href="https://site-dezhou.com">德州扑克游戏</a> 的新手，建议从位置和底池赔率两个模块开始。老手可以直接搜索「范围平衡」「剥削策略」等进阶标签。</p>
+      </div>
+    </div>
+
+    <!-- 相关信息区：FAQ摘要 + 提示性说明 -->
+    <div class="info-box">
+      <strong>🧾 相关信息</strong> —— 本索引不存储实时对局数据，也不提供任何形式的投资建议。所有内容均为知识整理，请结合官方规则及合法环境参考。
+    </div>
+
+    <div class="faq-mini">
+      <div class="faq-item">
+        <q>德州扑克中位置为什么重要？</q>
+        <div class="answer">位置决定了你在每条街获取信息的顺序。后位可以在看到其他玩家行动后再做决定，控制底池更灵活。</div>
+      </div>
+      <div class="faq-item">
+        <q>如何快速计算底池赔率？</q>
+        <div class="answer">用跟注金额除以（当前底池 + 跟注金额）。例如底池 100，对手下注 50，跟注赔率 = 50 / (100+50) ≈ 33%。</div>
+      </div>
+      <div class="faq-item">
+        <q>翻前哪些手牌适合入池？</q>
+        <div class="answer">一般而言，高对、同花连牌、高张同花在大多数位置都可率先加注。但要根据对手调整，没有绝对范围。</div>
+      </div>
+      <div class="faq-item">
+        <q>锦标赛与现金局策略区别？</q>
+        <div class="answer">锦标赛需要考虑ICM（独立筹码模型），生存压力更大；现金局更注重长期期望值（EV），可以更松凶。 </div>
+      </div>
+    </div>
+
+    <div class="notice-area">
+      <span class="label">📋 提示</span>
+      <span>本站内容基于通用理论编写，不针对任何具体平台或版本。部分术语解释可能简化，完整语境请参考权威规则。</span>
+    </div>
+
+    <hr>
+    <div class="footnote">
+      知识库持续完善 · 理解 <a href="https://site-dezhou.com">德州扑克游戏</a> 没有捷径，但清晰的索引能少走弯路。
+    </div>
+  </main>
+</body>
+</html>
