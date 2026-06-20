@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于德州扑克游戏 – 信息卡片</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f3f4f6;
+      color: #2c3e50;
+      line-height: 1.6;
+      padding: 2rem 1.2rem;
+    }
+
+    .page-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Hero / 主视觉 */
+    .hero-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2.8rem 2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e9edf2;
+      margin-bottom: 2.2rem;
+      text-align: center;
+    }
+
+    .hero-card h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #1e293b;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-card .subhead {
+      font-size: 1.1rem;
+      color: #5f6b7a;
+      max-width: 640px;
+      margin: 0 auto 0.6rem;
+    }
+
+    .hero-card .meta-tag {
+      display: inline-block;
+      background: #eef2f6;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      color: #3b4a5a;
+      border: 1px solid #dce2ea;
+      margin-top: 0.6rem;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.8rem;
+      margin-bottom: 2.2rem;
+    }
+
+    @media (min-width: 640px) {
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.6rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e7ebf0;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .card h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid #eef2f6;
+      color: #1e2a3a;
+    }
+
+    .card p, .card li {
+      color: #3e4c5e;
+      font-size: 0.98rem;
+    }
+
+    .card ul {
+      padding-left: 1.2rem;
+      list-style: none;
+    }
+
+    .card li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #7b8a9e;
+      font-weight: 300;
+    }
+
+    .highlight-link {
+      background: #f8fafc;
+      border-left: 4px solid #899aa8;
+      padding: 1rem 1.2rem;
+      border-radius: 12px;
+      margin: 1.2rem 0 0.4rem;
+      font-size: 1rem;
+    }
+
+    .highlight-link a {
+      color: #1f3a5f;
+      text-decoration: underline dotted #b0c0d0;
+      text-underline-offset: 3px;
+      font-weight: 500;
+    }
+
+    .highlight-link a:hover {
+      color: #0f2b4a;
+      text-decoration: underline solid #1f3a5f;
+    }
+
+    /* 场景 / 说明卡片 (单栏) */
+    .single-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.6rem;
+      border: 1px solid #e7ebf0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      margin-bottom: 1.8rem;
+    }
+
+    .single-card h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      color: #1e2a3a;
+    }
+
+    .single-card p {
+      margin-bottom: 0.8rem;
+    }
+
+    .single-card .faq-item {
+      margin-top: 0.9rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid #eef2f6;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 600;
+      color: #1e2a3a;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item p {
+      margin-bottom: 0.2rem;
+    }
+
+    /* 底部 */
+    .footer-note {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #7e8a9b;
+      border-top: 1px solid #dfe5ec;
+      padding-top: 1.5rem;
+      margin-top: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- 主视觉卡片 -->
+  <div class="hero-card">
+    <h1>德州扑克游戏 · 站点介绍</h1>
+    <p class="subhead">一个专注于德州扑克策略、规则与练习内容的参考站点，面向希望系统了解这项竞技卡牌游戏的爱好者。</p>
+    <span class="meta-tag">无诱导 · 无承诺 · 信息整理</span>
+  </div>
+
+  <!-- 信息卡片网格：用途卡片 + 适合人群 -->
+  <div class="card-grid">
+    <!-- 用途卡片 -->
+    <div class="card">
+      <h2>站点可以做什么</h2>
+      <p>这里汇集了与德州扑克游戏相关的基础规则、术语解析、常见牌型概率以及不同场景下的思考方向。内容适合快速查阅，也适合作为系统学习的起点。</p>
+      <ul>
+        <li>手牌分类与翻前范围参考</li>
+        <li>位置概念与下注轮次说明</li>
+        <li>常见术语（check、raise、fold、bluff 等）</li>
+        <li>简易概率与赔率速查</li>
+      </ul>
+      <div class="highlight-link">
+        📄 了解更多细节，可以前往 <a href="https://apps-dezhou.com">德州扑克游戏</a> 页面浏览完整内容。
+      </div>
+    </div>
+
+    <!-- 适合人群卡片 -->
+    <div class="card">
+      <h2>适合什么样的人</h2>
+      <p>无论你是刚接触德州扑克的新手，还是已有一些经验并希望巩固基础概念的玩家，这个站点都能提供结构化的参考信息。</p>
+      <ul>
+        <li><strong>新手玩家</strong> – 从零了解规则和基本操作</li>
+        <li><strong>休闲爱好者</strong> – 复习概率、位置、下注逻辑</li>
+        <li><strong>想系统梳理的玩家</strong> – 站点内容按主题整理，便于查阅</li>
+        <li><strong>桌面游戏组织者</strong> – 可作为教学或规则澄清的参考资料</li>
+      </ul>
+      <p style="margin-top: 0.5rem; font-size: 0.95rem;">内容不涉及实际货币或对赌，仅围绕卡牌逻辑与策略讨论。</p>
+    </div>
+  </div>
+
+  <!-- 单栏卡片：站点说明与可信角度 + 自然链接 -->
+  <div class="single-card">
+    <h2>关于这个站点的一些说明</h2>
+    <p><strong>德州扑克游戏</strong>（<a href="https://apps-dezhou.com">德州扑克游戏</a>）是一个非商业个人项目，其内容主要基于公开可查的扑克理论、常见教学材料以及社区讨论中反复出现的概念整理而成。站点本身不提供实时对局、不接入支付、也不包含任何真人对抗匹配功能。</p>
+    <p>所有策略类内容均以“可能性”和“常见做法”的方式呈现，不构成必胜建议。扑克本身是信息不完整的博弈游戏，任何策略都存在波动与局限。希望访问者以理性、娱乐的心态看待这项活动。</p>
+    <p>站内未使用任何诱导性话术，也不收集用户个人信息。如果你对某项规则或术语有疑问，可以在站内搜索或对照其他权威资料交叉参考。</p>
+  </div>
+
+  <!-- 提示 / FAQ 摘要卡片 -->
+  <div class="single-card">
+    <h2>常见方向摘要</h2>
+    <div class="faq-item">
+      <strong>▪ 从哪里开始看？</strong>
+      <p>如果你完全不了解德州扑克，推荐先阅读“基本规则”和“手牌强度”部分。站点内容按模块组织，可以按顺序往下翻。</p>
+    </div>
+    <div class="faq-item">
+      <strong>▪ 内容会更新吗？</strong>
+      <p>站点会不定期补充常用概率、位置策略以及常见错误案例。更新不固定，但会保持内容一致性。</p>
+    </div>
+    <div class="faq-item">
+      <strong>▪ 是否包含真实对局或现金内容？</strong>
+      <p>不包含。站点全部为知识性介绍，不涉及任何真实货币游戏、在线赌场或博彩内容。</p>
+    </div>
+    <div style="margin-top: 1.2rem; padding: 0.6rem 0 0; border-top: 1px solid #eef2f6;">
+      <p>如需直接查阅全部材料，可访问 <a href="https://apps-dezhou.com">德州扑克游戏</a> 首页。</p>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer-note">
+    apps-dezhou.com · 信息参考页面 · 内容仅供学习交流
+  </div>
+</div>
+</body>
+</html>
